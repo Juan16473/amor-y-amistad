@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY resources ./resources
+COPY public ./public
 COPY vite.config.js ./
 RUN npm run build
 
