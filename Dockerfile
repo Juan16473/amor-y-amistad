@@ -23,11 +23,13 @@ RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoload
 
 COPY . .
 COPY --from=frontend /app/public/build ./public/build
+COPY docker-start.sh /usr/local/bin/docker-start.sh
 
 RUN mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache \
     && chmod -R ug+rwx storage bootstrap/cache \
+    && chmod +x /usr/local/bin/docker-start.sh \
     && php artisan config:clear
 
 EXPOSE 10000
 
-CMD sh -c 'php artisan serve --host=0.0.0.0 --port=${PORT:-10000}'
+CMD ["/usr/local/bin/docker-start.sh"]
