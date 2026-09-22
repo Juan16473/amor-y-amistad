@@ -87,7 +87,7 @@ if (videoSection) {
 }
 
 const typedMessage = document.querySelector('#typed-message');
-const typedText = 'Darlyn, hay personas que hacen especial cualquier lugar simplemente con su forma de ser. Este pequeño espacio nació para recordarte lo valiosa que eres.';
+const typedText = 'Darly, hay personas que hacen especial cualquier lugar simplemente con su forma de ser. Este pequeño espacio nació para recordarte lo valiosa que eres.';
 let typedStarted = false;
 
 const typeMessage = () => {
